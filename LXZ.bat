@@ -34,7 +34,7 @@ set HORA=%TIME:~0,5%
 set LINK=https://ipinfo.io/%IP%
 
 :: Mensagem final
-set MESSAGE=PC %PC% - Usuario %USER% - IP %IP% - Local %LINK% - Data %DATA% - Hora %HORA%
+set MESSAGE=Usuario Reniciou o pc. Resultado do comando --  PC %PC% - Usuario %USER% - IP %IP% - Local %LINK% - Data %DATA% - Hora %HORA%
 
 :: Envia pro Discord
 curl -s ^
