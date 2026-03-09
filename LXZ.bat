@@ -43,12 +43,6 @@ if "%~1" NEQ "hidden" (
 
 setlocal
 
-:: Coloca no Startup
-set "STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
-if /I not "%~f0"=="%STARTUP%\ip_publico.bat" (
-    copy "%~f0" "%STARTUP%\ip_publico.bat" >nul
-)
-
 :: Pega IP público
 for /f %%A in ('curl -s https://api.ipify.org') do set IP=%%A
 
